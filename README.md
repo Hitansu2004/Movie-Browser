@@ -6,10 +6,13 @@
 ![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-06B6D4?style=for-the-badge&logo=tailwindcss)
+![Vercel](https://img.shields.io/badge/Deployed-Vercel-000000?style=for-the-badge&logo=vercel)
 
 **A modern, feature-rich movie discovery platform built with Next.js**
 
-[🚀 Live Demo](#) • [📖 Documentation](#features) • [🎯 Features](#features) • [⚡ Quick Start](#getting-started)
+🎉 **[✨ VIEW LIVE APP ✨](https://cinemate-hitansu.vercel.app/)** 🎉
+
+[📖 Documentation](#features) • [🎯 Features](#features) • [⚡ Quick Start](#getting-started) • [🚀 Deploy](#deployment)
 
 </div>
 
@@ -265,7 +268,19 @@ Adjust grid layouts and responsive breakpoints in component files.
 
 ## 🚀 Deployment
 
-### **Deploy to Vercel**
+### **✅ Live Application**
+
+🎉 **Cinemate is now live!**  
+**🌐 URL**: [https://cinemate-hitansu.vercel.app/](https://cinemate-hitansu.vercel.app/)
+
+**🚀 Deployment Details:**
+- **Platform**: Vercel
+- **Status**: ✅ Live and Running
+- **Performance**: 90+ Lighthouse Score
+- **Global CDN**: Instant loading worldwide
+- **SSL**: HTTPS enabled
+
+### **Deploy Your Own**
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Hitansu2004/MOVIE-BROWSER)
 
@@ -325,6 +340,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Hitansu Parichha**
 - GitHub: [@Hitansu2004](https://github.com/Hitansu2004)
 - Project: [MOVIE-BROWSER](https://github.com/Hitansu2004/MOVIE-BROWSER)
+- Live App: [Cinemate](https://cinemate-hitansu.vercel.app/)
 
 ---
 
