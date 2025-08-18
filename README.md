@@ -263,6 +263,35 @@ Adjust grid layouts and responsive breakpoints in component files.
 
 ---
 
+## 🚀 Deployment
+
+### **Deploy to Vercel**
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Hitansu2004/MOVIE-BROWSER)
+
+**Step-by-step deployment:**
+
+1. **Connect your GitHub repository to Vercel**
+2. **Set environment variables in Vercel dashboard:**
+   ```
+   NEXT_PUBLIC_TMDB_API_KEY=your_api_key_here
+   NEXT_PUBLIC_TMDB_BASE_URL=https://api.themoviedb.org/3
+   ```
+3. **Deploy with one click!**
+
+**Alternative deployment:**
+```bash
+npm i -g vercel
+vercel --prod
+```
+
+### **Other Platforms**
+- **Netlify**: Connect GitHub repo and set build command to `npm run build`
+- **Railway**: One-click deploy from GitHub
+- **AWS Amplify**: Full-stack deployment with CDN
+
+---
+
 ## 🤝 Contributing
 
 We welcome contributions! Here's how to get started:
