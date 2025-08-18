@@ -48,27 +48,42 @@ interface MovieDetail {
 
 async function getMovieDetails(id: string): Promise<MovieDetail> {
   const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY || "b80d59c33d6d57ed9c7e3713f91c188a";
+  
+  if (!API_KEY) {
+    throw new Error('TMDB API key is not configured');
+  }
+  
   const res = await fetch(
     `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`,
     { 
       next: { revalidate: 3600 }, // Cache for 1 hour
       headers: {
         'Accept': 'application/json',
+        'User-Agent': 'Cinemate/1.0'
       }
     }
   );
   
   if (!res.ok) {
-    throw new Error(`Failed to fetch movie: ${res.status}`);
+    if (res.status === 404) {
+      throw new Error('Movie not found');
+    }
+    throw new Error(`Failed to fetch movie: ${res.status} ${res.statusText}`);
   }
   
-  return res.json();
+  const data = await res.json();
+  
+  if (!data || !data.id) {
+    throw new Error('Invalid movie data received');
+  }
+  
+  return data;
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   try {
-    const { id } = await params;
-    const movie = await getMovieDetails(id);
+    const resolvedParams = await params;
+    const movie = await getMovieDetails(resolvedParams.id);
     return {
       title: `${movie.title} | Cinemate`,
       description: movie.overview || `Watch ${movie.title} - ${movie.tagline}`,
@@ -90,11 +105,12 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
 export default async function MovieDetailPage({ params }: { params: Promise<{ id: string }> }) {
   let movie: MovieDetail;
-  const { id } = await params;
   
   try {
-    movie = await getMovieDetails(id);
+    const resolvedParams = await params;
+    movie = await getMovieDetails(resolvedParams.id);
   } catch (error) {
+    console.error('Error fetching movie details:', error);
     notFound();
   }
 
